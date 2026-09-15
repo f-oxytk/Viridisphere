@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frequently Asked Questions - Viridisphere</title>
+    <link rel="stylesheet" href="navherofooter.css" />
+
+    <style>
+/* HERO BACKGROUND */
+      .hero {
+        position: relative;
+        height: 480px;
+        background-image: url("faqHERO.jpg");
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        padding: 0 8%;
+      }
+
+
+/* FAQ SECTION */
+
+        .faq-section {
+            padding: 120px 10%;
+            background: var(--white);
+
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 90px;
+        }
+
+        .section-intro {
+            position: sticky;
+            top: 130px;
+            align-self: start;
+        }
+
+        .section-intro span {
+            color: var(--green);
+            font-size: 12px;
+            letter-spacing: 2px;
+            font-weight: bold;
+        }
+
+        .section-intro h2 {
+            font-family: var(--heading-font);
+            font-size: clamp(38px, 4vw, 60px);
+            line-height: 1.05;
+            margin: 25px 0;
+            color: var(--green);
+        }
+
+        .section-intro p {
+            max-width: 420px;
+            line-height: 1.8;
+            font-size: 16px;
+            color: var(--dark);
+            opacity: 0.85;
+        }
+
+
+/* FAQ LIST */
+
+        .faq-list {
+            border-top: 1px solid rgba(55, 90, 23, 0.25); /* Adjusted to match --green */
+        }
+
+        details {
+            border-bottom: 1px solid rgba(55, 90, 23, 0.25);
+        }
+
+        summary {
+            list-style: none;
+            cursor: pointer;
+
+            min-height: 90px;
+            padding: 25px 5px;
+
+            display: grid;
+            grid-template-columns: 55px 1fr 30px;
+            align-items: center;
+            gap: 15px;
+
+            font-family: var(--heading-font);
+            font-size: 21px;
+            color: var(--green);
+
+            transition: color 0.3s ease;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary:hover {
+            color: var(--dark);
+        }
+
+        .question-number {
+            font-family: var(--body-font);
+            font-size: 12px;
+            letter-spacing: 2px;
+            color: var(--ash);
+        }
+
+        .plus {
+            font-family: var(--body-font);
+            font-size: 28px;
+            font-weight: normal;
+            color: var(--green);
+
+            transition: transform 0.3s ease;
+        }
+
+        details[open] .plus {
+            transform: rotate(45deg);
+        }
+
+        .answer {
+            padding: 0 50px 30px 70px;
+        }
+
+        .answer p {
+            max-width: 650px;
+            color: var(--dark);
+            opacity: 0.85;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+
+/* C-T-A */
+
+        .faq-cta {
+            padding: 110px 10%;
+            background: var(--dark); /* Dark background provides strong visual contrast */
+
+            text-align: center;
+        }
+
+        .cta-label {
+            color: var(--olive);
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 25px;
+        }
+
+        .faq-cta h2 {
+            font-family: var(--title-font);
+            font-size: clamp(55px, 8vw, 105px);
+            line-height: 0.85;
+            color: var(--heading-on-green);
+            margin-bottom: 30px;
+        }
+
+        .faq-cta p {
+            max-width: 600px;
+            margin: 0 auto 35px;
+            text-align: center;
+            color: var(--body-on-green);
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 30px;
+
+            background: var(--green);
+            color: var(--white);
+
+            text-decoration: none;
+
+            font-size: 12px;
+            letter-spacing: 2px;
+            font-weight: bold;
+
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: var(--olive);
+            color: var(--dark);
+            transform: translateY(-3px);
+        }
+    </style>
+
+    
+</head>
+    <link rel="icon" type="image/png" href="viridispherelogo fordarkbg.png" />
+
+<body>
+    <!-- NAVIGATION SECTION -->
+    <header class="navbar">
+    <a href="index.html" class="logo-link">
+        <img src="viridispherelogo forwhite-lightbg.png" alt="Logo" class="nav-logo" />
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="The Issue.html">The Issue</a>
+        <a href="Data and Research.html">Data and Research</a>
+        <a href="Advocacy.html">Our Advocacy</a>
+        <a href="FAQ.html">FAQ</a>
+      </nav>
+            <a href="join.html#join" class="nav-signup">SIGN UP</a>
+    </header>
+
+
+    <!--"BILLBOARD" OR HERO SECTION-->
+    <section class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1>FREQUENTLY ASKED QUESTIONS</h1>
+        <p>
+          Have a question? Check if it's been answered!
+        </p>
+      </div>
+    </section>
+
+
+    <main>
+<!-- FAQ SECTION -->
+        <section class="faq-section">
+            <div class="section-intro">
+                
+                <h2>
+                    Small questions.<br>
+                    Important actions.
+                </h2>
+                <p>
+                    Proper waste management starts with
+                    understanding what we can do every day.
+                    Explore the questions below and learn
+                    how simple habits can make a difference.
+                </p>
+            </div>
+
+
+            <div class="faq-list">
+
+                <!-- FAQ 1 -->
+                <details open>
+                    <summary>
+                        <span class="question-number">01</span>
+                        What is proper waste management?
+                        <span class="plus">+</span>
+                    </summary>
+
+                    <div class="answer">
+                        <p>
+                            Proper waste management means reducing,
+                            segregating, reusing, recycling, composting,
+                            and disposing of waste responsibly. It begins
+                            where waste is created — usually at home,
+                            school, or work.
+                        </p>
+                    </div>
+                </details>
+
+
+                <!-- FAQ 2 -->
+                <details>
+                    <summary>
+                        <span class="question-number">02</span>
+                        Why should I segregate my waste?
+                        <span class="plus">+</span>
+                    </summary>
+
+                    <div class="answer">
+                        <p>
+                            Segregating waste makes it easier to recover
+                            recyclable and compostable materials while
+                            keeping different types of waste from becoming
+                            mixed together. In the Philippines, waste
+                            segregation is primarily expected to happen
+                            at the source.
+                        </p>
+                    </div>
+                </details>
+
+
+                <!-- FAQ 3 -->
+                <details>
+                    <summary>
+                        <span class="question-number">03</span>
+                        What waste can I recycle?
+                        <span class="plus">+</span>
+                    </summary>
+
+                    <div class="answer">
+                        <p>
+                            Common recyclable materials include clean
+                            paper, cardboard, plastic containers, glass,
+                            and metal. However, what can actually be
+                            collected may differ depending on your local
+                            recycling or barangay program.
+                        </p>
+                    </div>
+                </details>
+
+
+                <!-- FAQ 4 -->
+                <details>
+                    <summary>
+                        <span class="question-number">04</span>
+                        What is composting?
+                        <span class="plus">+</span>
+                    </summary>
+
+                    <div class="answer">
+                        <p>
+                            Composting is the controlled breakdown of
+                            biodegradable materials into nutrient-rich
+                            compost. Food scraps such as fruit and
+                            vegetable trimmings, along with certain
+                            garden waste, can be composted properly.
+                        </p>
+                    </div>
+                </details>
+
+
+                <!-- FAQ 5 -->
+                <details>
+                    <summary>
+                        <span class="question-number">05</span>
+                        What should NOT go into my compost?
+                        <span class="plus">+</span>
+                    </summary>
+
+                    <div class="answer">
+                        <p>
+                            Avoid putting materials that can contaminate
+                            the compost or create health and odor problems.
+                            Human waste, dead animals, and other unsuitable
+                            materials should not be added to ordinary
+                            household compost.
+                        </p>
+                    </div>
+                </details>
+
+
+                <!-- FAQ 6 -->
+                <details>
+                    <summary>
+                        <span class="question-number">06</span>
+                        How can I reduce the amount of waste I produce?
+                        <span class="plus">+</span>
+                    </summary>
+
+                    <div class="answer">
+                        <p>
+                            Start by refusing unnecessary single-use items,
+                            reducing unnecessary purchases, reusing items
+                            whenever possible, and choosing products with
+                            less packaging. Small changes in daily habits
+                            can reduce the amount of waste going to disposal.
+                        </p>
+                    </div>
+                </details>
+
+
+                <!-- FAQ 7 -->
+                <details>
+                    <summary>
+                        <span class="question-number">07</span>
+                        Is burning my household trash okay?
+                        <span class="plus">+</span>
+                    </summary>
+
+                    <div class="answer">
+                        <p>
+                            No. Open burning of municipal solid waste is
+                            prohibited under the implementing rules of
+                            Republic Act No. 9003. Instead, waste should be
+                            properly segregated and handled through the
+                            appropriate local waste-management system.
+                        </p>
+                    </div>
+                </details>
+
+
+                <!-- FAQ 8 -->
+                <details>
+                    <summary>
+                        <span class="question-number">08</span>
+                        How can I help Viridisphere?
+                        <span class="plus">+</span>
+                    </summary>
+
+                    <div class="answer">
+                        <p>
+                            You can join our clean-up activities, participate
+                            in educational workshops, practice proper waste
+                            segregation at home, reduce your use of
+                            single-use plastics, and encourage people around
+                            you to do the same.
+                        </p>
+                    </div>
+                </details>
+
+
+                <!-- FAQ 9 -->
+                <details>
+                    <summary>
+                        <span class="question-number">09</span>
+                        Can students join Viridisphere?
+                        <span class="plus">+</span>
+                    </summary>
+
+                    <div class="answer">
+                        <p>
+                            Yes! Students can contribute by joining
+                            community activities, helping spread awareness,
+                            assisting in workshops, and practicing proper
+                            waste management in their own schools and homes.
+                        </p>
+                    </div>
+                </details>
+
+
+                <!-- FAQ 10 -->
+                <details>
+                    <summary>
+                        <span class="question-number">10</span>
+                        Where can I learn more?
+                        <span class="plus">+</span>
+                    </summary>
+
+                    <div class="answer">
+                        <p>
+                            Follow Viridisphere for more waste-management
+                            guides, community activities, and opportunities
+                            to turn awareness into action.
+                        </p>
+                    </div>
+                </details>
+
+            </div>
+
+        </section>
+
+
+ <!-- FOOTER -->
+    <section class="site-footer">
+      <div class="footer-content">
+                <div class="footer-layout">
+                    <div class="footer-about">
+                        <h2>Our Cause</h2>
+                        <p>Viridisphere helps students and communities build cleaner, healthier spaces through practical waste management, responsible habits, and environmental action.</p>
+                    </div>
+                    <div class="footer-links">
+                        <h2 class="footer-explore-title"><img src="viridispherelogo fordarkbg.png" alt="" />Explore</h2>
+                        <nav class="footer-nav" aria-label="Footer navigation">
+                            <a href="Advocacy.html">About Us</a>
+                            <a href="FAQ.html">FAQ</a>
+                            <a href="https://www.youtube.com/watch?v=tVlKLpxyCBY" target="_blank" rel="noopener noreferrer">Terms and Conditions</a>
+                            <a href="https://www.youtube.com/watch?v=tVlKLpxyCBY" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+                        </nav>
+                        <p class="footer-copyright">&copy; Viridisphere Organization</p>
+                    </div>
+                </div>
+      </div>
+    </section>
+
+</body>
+</html>

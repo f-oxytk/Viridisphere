@@ -1,0 +1,31 @@
+AI usage declaration from Group #3 in Empowerment Technology, 1st Term, SY2627 including searched syntaxes
+
+Website Development
+
+-------------------------------------------------------------------------------
+
+HTML and CSS from AI coding
+CSS
+z-index:
+transition:
+display:
+*::before, *:: after {}
+flex-direction:
+var(--);
+:root {
+line-height:
+letter-spacing:
+box-sizing:
+overflow:
+grid-template-columns:
+scroll-behavior:
+text-decoration:
+transform: translate
+
+----
+
+HTML
+	<details></details>
+    <script></script>
+
+All other syntaxes and css styling is from personal knowledge or past lessons from junior high to senior high :)

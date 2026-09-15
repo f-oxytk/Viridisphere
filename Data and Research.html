@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="viridispherelogo fordarkbg.png" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data and Research - Viridisphere</title>
+    <link rel="stylesheet" href="navherofooter.css" />
+
+    <style>
+      .hero {
+        position: relative;
+        height: 480px;
+        background-image: url("ActionHERO.jpg");
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        padding: 0 8%;
+      }
+
+      .research-page {
+        background: var(--white);
+      }
+
+      .research-section {
+        padding: 82px 7%;
+      }
+
+      .research-section.dark-section {
+        background: var(--dark);
+      }
+
+      .section-inner {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .section-kicker {
+        color: var(--green);
+        font-family: var(--body-font);
+        font-size: 11px;
+        font-weight: bold;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+
+      .dark-section .section-kicker {
+        color: var(--olive);
+      }
+
+      .research-section h2 {
+        margin: 10px 0 16px;
+        color: var(--heading-on-ash);
+        font-size: clamp(32px, 4vw, 50px);
+        line-height: 1.05;
+      }
+
+      .dark-section h2 {
+        color: var(--heading-on-green);
+      }
+
+      .section-intro {
+        max-width: 720px;
+        margin-bottom: 34px;
+      }
+
+      .section-intro p {
+        margin: 0;
+      }
+
+      .dark-section .section-intro p,
+      .dark-section .source-note {
+        color: #ffffff;
+      }
+
+      .data-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+      }
+
+      .data-panel {
+        padding: 30px;
+        background: #ffffff;
+        border-left: 4px solid var(--green);
+      }
+
+      .data-panel h3,
+      .research-card h3 {
+        margin: 0 0 12px;
+        color: var(--green);
+        font-size: 25px;
+        line-height: 1.15;
+      }
+
+      .data-panel p {
+        margin-bottom: 24px;
+      }
+
+      .data-panel.feature-panel {
+        grid-column: 1 / -1;
+        background: var(--dark);
+        color: #ffffff;
+        border-left-color: var(--olive);
+      }
+
+      .data-panel.feature-panel h3,
+      .data-panel.feature-panel p {
+        color: #ffffff;
+      }
+
+      .data-panel.feature-panel h3 {
+        color: var(--heading-on-green);
+      }
+
+      .data-panel.feature-panel .source-note a {
+        color: var(--olive);
+      }
+
+      .local-stat {
+        display: block;
+        margin: 8px 0 12px;
+        color: var(--olive);
+        font-family: var(--title-font);
+        font-size: clamp(48px, 8vw, 86px);
+        line-height: 0.95;
+      }
+
+      .composition-chart .chart-row {
+        grid-template-columns: 145px 1fr 64px;
+      }
+
+      .composition-chart .chart-bar {
+        background: var(--olive);
+      }
+
+      .composition-chart .chart-value {
+        color: var(--olive);
+      }
+
+      .dark-section .data-panel,
+      .dark-section .data-panel h3 {
+        color: #ffffff;
+      }
+
+      .chart {
+        display: grid;
+        gap: 14px;
+      }
+
+      .chart-row {
+        display: grid;
+        grid-template-columns: 90px 1fr 70px;
+        gap: 12px;
+        align-items: center;
+        font-family: var(--body-font);
+        font-size: 14px;
+      }
+
+      .chart-track {
+        height: 24px;
+        background: #ebe8df;
+      }
+
+      .chart-bar {
+        height: 100%;
+        background: var(--green);
+      }
+
+      .chart-bar.alt {
+        background: var(--olive);
+      }
+
+      .chart-value {
+        color: var(--green);
+        font-weight: bold;
+        text-align: right;
+      }
+
+      .source-note {
+        margin: 20px 0 0;
+        color: var(--ash);
+        font-size: 13px;
+      }
+
+      .source-note a,
+      .research-card a {
+        color: var(--green);
+        text-decoration: none;
+      }
+
+      .source-note a:hover,
+      .research-card a:hover {
+        text-decoration: underline;
+      }
+
+      .research-card-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .research-card {
+        min-height: 230px;
+        padding: 28px;
+        background: #1d3a20;
+        border: 1px solid var(--olive);
+      }
+
+      .research-card h3 {
+        color: var(--heading-on-green);
+      }
+
+      .research-card p {
+        color: #ffffff;
+        font-size: 15px;
+      }
+
+      .research-card a {
+        color: var(--olive);
+        font-size: 13px;
+        font-weight: bold;
+        letter-spacing: 0.5px;
+      }
+
+      @media (max-width: 760px) {
+        .data-grid,
+        .research-card-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .research-section {
+          padding: 60px 7%;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .chart-row {
+          grid-template-columns: 70px 1fr 58px;
+          gap: 8px;
+          font-size: 13px;
+        }
+
+        .data-panel,
+        .research-card {
+          padding: 22px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="navbar">
+      <a href="index.html" class="logo-link">
+        <img src="viridispherelogo forwhite-lightbg.png" alt="Logo" class="nav-logo" />
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="The Issue.html">The Issue</a>
+        <a href="Data and Research.html">Data and Research</a>
+        <a href="Advocacy.html">Our Advocacy</a>
+        <a href="FAQ.html">FAQ</a>
+      </nav>
+      <a href="join.html#join" class="nav-signup">SIGN UP</a>
+    </header>
+
+    <section class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1>DATA AND RESEARCH</h1>
+        <p>
+          Explore the evidence behind the waste issue through clear data,
+          visual comparisons, and research on solutions that move communities
+          from awareness to action.
+        </p>
+      </div>
+    </section>
+
+    <main class="research-page">
+      <section class="research-section" aria-labelledby="data-title">
+        <div class="section-inner">
+          <div class="section-intro">
+            <h2 id="data-title">The Numbers Behind the Problem</h2>
+            <p>
+              Davao City gives the issue a local scale. These figures show what
+              the city throws away, what collection systems cover, and where
+              recovery infrastructure remains limited.
+            </p>
+          </div>
+
+          <div class="data-grid">
+            <article class="data-panel feature-panel">
+              <h3>Davao By the Numbers</h3>
+              <span class="local-stat">1,100 tons/day</span>
+              <p>
+                Davao City generated approximately 1,100 metric tons of
+                municipal solid waste per day in the study's 2024 baseline.
+                That is a calculated equivalent of about 401,500 tons per year,
+                not a separately measured annual total.
+              </p>
+              <p class="source-note">
+                Source: <a href="https://doi.org/10.1016/j.jece.2026.121409" target="_blank" rel="noopener noreferrer">Davao City scenario study (2026)</a>
+              </p>
+            </article>
+
+            <article class="data-panel">
+              <h3>What Makes Up Davao's Waste?</h3>
+              <p>Physical composition of municipal solid waste in the study dataset.</p>
+              <div class="chart composition-chart" role="img" aria-label="Davao waste composition includes food 43.40 percent, plastic and rubber 20.14 percent, paper 17.29 percent, yard and wood 6.68 percent, glass ceramic and stone 4.26 percent, textile 3.11 percent, metals 2.81 percent, and other 2.31 percent.">
+                <div class="chart-row"><span>Food</span><div class="chart-track"><div class="chart-bar" style="width: 100%;"></div></div><span class="chart-value">43.40%</span></div>
+                <div class="chart-row"><span>Plastic/rubber</span><div class="chart-track"><div class="chart-bar" style="width: 46.4%;"></div></div><span class="chart-value">20.14%</span></div>
+                <div class="chart-row"><span>Paper</span><div class="chart-track"><div class="chart-bar" style="width: 39.8%;"></div></div><span class="chart-value">17.29%</span></div>
+                <div class="chart-row"><span>Yard/wood</span><div class="chart-track"><div class="chart-bar" style="width: 15.4%;"></div></div><span class="chart-value">6.68%</span></div>
+                <div class="chart-row"><span>Glass/ceramic</span><div class="chart-track"><div class="chart-bar" style="width: 9.8%;"></div></div><span class="chart-value">4.26%</span></div>
+                <div class="chart-row"><span>Textile</span><div class="chart-track"><div class="chart-bar" style="width: 7.2%;"></div></div><span class="chart-value">3.11%</span></div>
+                <div class="chart-row"><span>Metals</span><div class="chart-track"><div class="chart-bar" style="width: 6.5%;"></div></div><span class="chart-value">2.81%</span></div>
+                <div class="chart-row"><span>Other</span><div class="chart-track"><div class="chart-bar" style="width: 5.3%;"></div></div><span class="chart-value">2.31%</span></div>
+              </div>
+              <p class="source-note">Source: <a href="https://doi.org/10.3390/su14042419" target="_blank" rel="noopener noreferrer">Suh et al. (2022), Sustainability</a></p>
+            </article>
+
+            <article class="data-panel">
+              <h3>Davao Collection Coverage</h3>
+              <p>Estimated share of municipal waste generation covered by collection.</p>
+              <div class="chart" role="img" aria-label="Approximately 68 percent of Davao waste generation was covered by collection and 32 percent was outside collection coverage.">
+                <div class="chart-row">
+                  <span>Covered</span>
+                  <div class="chart-track"><div class="chart-bar" style="width: 68%;"></div></div>
+                  <span class="chart-value">68%</span>
+                </div>
+                <div class="chart-row">
+                  <span>Outside</span>
+                  <div class="chart-track"><div class="chart-bar alt" style="width: 32%;"></div></div>
+                  <span class="chart-value">32%</span>
+                </div>
+              </div>
+              <p class="source-note">Source: <a href="https://doi.org/10.1016/j.jece.2026.121409" target="_blank" rel="noopener noreferrer">Davao City scenario study (2026)</a></p>
+            </article>
+
+            <article class="data-panel">
+              <h3>Barangays with Material Recovery Facilities</h3>
+              <p>Only about one in five barangays had an MRF in the city report.</p>
+              <div class="chart" role="img" aria-label="40 of Davao City's 182 barangays had a Material Recovery Facility, while 142 did not.">
+                <div class="chart-row"><span>With MRF</span><div class="chart-track"><div class="chart-bar" style="width: 22%;"></div></div><span class="chart-value">40</span></div>
+                <div class="chart-row"><span>Without MRF</span><div class="chart-track"><div class="chart-bar alt" style="width: 78%;"></div></div><span class="chart-value">142</span></div>
+              </div>
+              <p class="source-note">Source: <a href="https://davaocity.gov.ph/solid-waste-management/barangays-urged-to-strengthen-waste-segregation/" target="_blank" rel="noopener noreferrer">City Government of Davao</a></p>
+            </article>
+
+            <article class="data-panel">
+              <h3>Garbage Collected by the City</h3>
+              <p>Recorded garbage collected increased between 2020 and 2022.</p>
+              <div class="chart" role="img" aria-label="Garbage collected by Davao City increased from 223431 tons in 2020 to 254750 tons in 2021 and 285829 tons in 2022.">
+                <div class="chart-row"><span>2020</span><div class="chart-track"><div class="chart-bar" style="width: 78.2%;"></div></div><span class="chart-value">223,431</span></div>
+                <div class="chart-row"><span>2021</span><div class="chart-track"><div class="chart-bar" style="width: 89.1%;"></div></div><span class="chart-value">254,750</span></div>
+                <div class="chart-row"><span>2022</span><div class="chart-track"><div class="chart-bar alt" style="width: 100%;"></div></div><span class="chart-value">285,829</span></div>
+              </div>
+              <p class="source-note">Source: <a href="https://davaocity.gov.ph/solid-waste-management/businesses-urged-to-abide-solid-waste-management-plan/" target="_blank" rel="noopener noreferrer">City Government of Davao</a></p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="research-section dark-section" aria-labelledby="research-title">
+        <div class="section-inner">
+          <div class="section-intro">
+            <h2 id="research-title">What Does Research Say?</h2>
+            <p>
+              Davao-specific and Mindanao-focused studies connect local waste
+              conditions with climate impacts, plastic pollution, and better
+              management choices.
+            </p>
+          </div>
+
+          <div class="research-card-grid">
+            <article class="research-card">
+              <h3>Davao waste scenarios</h3>
+              <p>
+                A 2026 scenario study estimated about 1,100 metric tons of
+                municipal waste per day in Davao's 2024 baseline. Its modeled
+                diversion approaches reduced environmental impacts by roughly
+                50-70% in the scenarios examined.
+              </p>
+              <a href="https://doi.org/10.1016/j.jece.2026.121409" target="_blank" rel="noopener noreferrer">Read the 2026 study</a>
+            </article>
+
+            <article class="research-card">
+              <h3>Integrated waste planning</h3>
+              <p>
+                Suh et al. analyzed Davao's integrated waste-management network.
+                The study reported 50.08% biodegradable, 18.42% recyclable,
+                29.19% residual, and 2.31% special waste in its dataset.
+              </p>
+              <a href="https://doi.org/10.3390/su14042419" target="_blank" rel="noopener noreferrer">Read Suh et al. (2022)</a>
+            </article>
+
+            <article class="research-card">
+              <h3>Plastic pollution in Southern Mindanao</h3>
+              <p>
+                A 2024 survey around Southern Mindanao documented 13,970
+                land-based debris items and 1,405 sea-surface debris items.
+                Riverbanks had the highest average density at about 3.6 items
+                per square metre.
+              </p>
+              <a href="https://doi.org/10.1016/j.marpolbul.2024.117134" target="_blank" rel="noopener noreferrer">Read Fuentes et al. (2024)</a>
+            </article>
+
+            <article class="research-card">
+              <h3>Reducing sachet impacts</h3>
+              <p>
+                Research on plastic sachet programs compared collection,
+                recycling, co-processing, and refillable packaging. Refillable
+                packaging produced lower impacts than business as usual in the
+                scenarios examined.
+              </p>
+              <a href="https://doi.org/10.1016/j.procir.2024.12.007" target="_blank" rel="noopener noreferrer">Read the sachet study</a>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <section class="site-footer">
+      <div class="footer-content">
+        <div class="footer-layout">
+          <div class="footer-about">
+            <h2>Our Cause</h2>
+            <p>Viridisphere helps students and communities build cleaner, healthier spaces through practical waste management, responsible habits, and environmental action.</p>
+          </div>
+          <div class="footer-links">
+            <h2 class="footer-explore-title"><img src="viridispherelogo fordarkbg.png" alt="" />Explore</h2>
+            <nav class="footer-nav" aria-label="Footer navigation">
+              <a href="Advocacy.html">About Us</a>
+              <a href="FAQ.html">FAQ</a>
+              <a href="https://www.youtube.com/watch?v=tVlKLpxyCBY" target="_blank" rel="noopener noreferrer">Terms and Conditions</a>
+              <a href="https://www.youtube.com/watch?v=tVlKLpxyCBY" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+            </nav>
+            <p class="footer-copyright">&copy; Viridisphere Organization</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

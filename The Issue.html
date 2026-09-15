@@ -1,0 +1,868 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="viridispherelogo fordarkbg.png" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Problem - Viridisphere</title>
+    <link rel="stylesheet" href="navherofooter.css" />
+
+    <style>
+      /* HERO BACKGROUND */
+      .hero {
+        position: relative;
+        height: 480px;
+        background-image: url("caeHERO.jpg");
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        padding: 0 8%;
+      }
+
+      /* Purpose-Grid */
+
+      .advocacy {
+        padding: 72px 9%;
+        background-color: var(--white);
+      }
+
+      .advocacy + .advocacy {
+        padding-top: 24px;
+      }
+
+      .advocacy-grid {
+        width: 100%;
+        max-width: 1200px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 70px;
+        align-items: center;
+      }
+
+      /* Image */
+
+      .advocacy-image {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        min-height: 0;
+        background-image: url("cneimg1.jpg");
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        border: 8px solid #ffffff;
+        box-shadow: 0 0 0 1px var(--ash);
+        overflow: hidden;
+      }
+
+      .image-label {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        padding: 8px 14px;
+        background-color: var(--dark);
+        color: var(--olive);
+        font-family: var(--body-font);
+        font-size: 10px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        border-radius: 4px;
+      }
+
+      .second-advocacy .advocacy-image {
+        background-image: url("cneimg2.jpg");
+      }
+
+      /* Advocacy-Content */
+
+      .advocacy-content h3 {
+        font-family: var(--heading-font);
+        font-size: clamp(28px, 3.5vw, 42px);
+        color: var(--dark);
+        line-height: 1.08;
+        margin-bottom: 24px;
+      }
+
+      .advocacy-content p {
+        font-family: var(--body-font);
+        font-size: 14px;
+        color: var(--dark);
+        margin-bottom: 18px;
+        line-height: 1.7;
+      }
+
+      .merged-introduction {
+        padding: 72px 9% 36px;
+        background-color: var(--white);
+      }
+
+      .merged-introduction + .merged-introduction {
+        padding-top: 36px;
+      }
+
+      .merged-introduction .advocacy-content h3 {
+        margin-bottom: 18px;
+      }
+
+      .merged-introduction .advocacy-content p {
+        font-size: 16px;
+        color: var(--dark);
+      }
+
+      .merged-introduction.scale-section .advocacy-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .merged-stat-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 22px;
+      }
+
+      .merged-stat-card {
+        min-height: 150px;
+        padding: 22px 20px;
+        background-color: var(--green);
+        color: var(--body-on-green);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .merged-stat-card strong,
+      .merged-stat-card span {
+        transition: transform 180ms ease, text-shadow 180ms ease;
+        transform-origin: left center;
+      }
+
+      .merged-stat-card:hover strong,
+      .merged-stat-card:hover span,
+      .merged-stat-card:focus-within strong,
+      .merged-stat-card:focus-within span {
+        transform: scale(1.04);
+        text-shadow: 0 0 10px rgba(194, 192, 138, 0.75);
+      }
+
+      .merged-stat-card strong {
+        color: var(--heading-on-green);
+        font-family: var(--heading-font);
+        font-size: clamp(25px, 3vw, 38px);
+        line-height: 1;
+        margin-bottom: 10px;
+      }
+
+      .merged-stat-card span {
+        font-size: 14px;
+        line-height: 1.4;
+      }
+
+      /* CARDS*/
+      .website-details {
+        background-color: var(--white);
+        padding: 28px 5% 36px;
+      }
+
+      .website-details.first-impact-section {
+        padding-top: 100px;
+      }
+
+      .cards-grid {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+        align-items: stretch;
+      }
+
+      .flashcards-heading {
+        margin-bottom: 44px;
+      }
+
+      .flip-card {
+        position: relative;
+        display: grid;
+        flex: 1;
+        min-height: 0;
+        outline: none;
+      }
+
+      .flip-card::after {
+        content: "Click to interact";
+        position: fixed;
+        top: calc(var(--cursor-y, 0px) + 14px);
+        left: calc(var(--cursor-x, 0px) + 14px);
+        z-index: 10;
+        padding: 6px 9px;
+        border-radius: 4px;
+        background: var(--dark);
+        color: var(--olive);
+        font-family: var(--body-font);
+        font-size: 11px;
+        letter-spacing: 0.3px;
+        white-space: nowrap;
+        pointer-events: none;
+        opacity: 0;
+        transform: translateY(3px);
+        transition: opacity 150ms ease, transform 150ms ease;
+      }
+
+      .flip-card:hover::after {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .flip-card > .card {
+        grid-area: 1 / 1;
+        width: 100%;
+        min-height: 0;
+        align-self: stretch;
+      }
+
+      .flip-card > .effect-card {
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(12px);
+        transition: opacity 220ms ease, transform 220ms ease;
+      }
+
+      .flip-card.is-flipped > .effect-card {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+
+      .flip-card:focus-visible {
+        box-shadow: 0 0 0 3px var(--olive);
+      }
+
+      @media (max-width: 760px) {
+        .cards-grid {
+          flex-direction: column;
+        }
+
+        .card {
+          min-height: 0;
+        }
+
+        .flip-card {
+          min-height: 0;
+        }
+      }
+
+      .card {
+        background: var(--dark);
+        flex: 1;
+        min-height: 0;
+        padding: 38px 34px;
+        border-radius: 4px;
+        border: 1px solid var(--green);
+        display: flex;
+        flex-direction: column;
+        color: var(--white);
+        box-shadow: 0 12px 24px rgba(17, 32, 30, 0.12);
+      }
+
+      .card h2 {
+        font-size: clamp(23px, 2.5vw, 31px);
+        line-height: 1.1;
+        margin-bottom: 18px;
+      }
+
+      .card br {
+        display: none;
+      }
+
+      .card h2,
+      .card h3,
+      .card h4 {
+        color: var(--heading-on-green);
+      }
+
+      .card p {
+        color: var(--body-on-green);
+        margin: 0;
+      }
+
+      .card p + p {
+        margin-top: 20px;
+      }
+
+      .effect-card {
+        background: var(--olive);
+        border-color: var(--green);
+        color: var(--body-on-ash);
+        box-shadow: 0 12px 24px rgba(55, 90, 23, 0.16);
+      }
+
+      .effect-card h2 {
+        color: var(--heading-on-ash);
+      }
+
+      .effect-card p {
+        color: var(--body-on-ash);
+      }
+
+      .impact-section {
+        background-color: var(--dark);
+        color: var(--olive);
+      }
+
+      .impact-section .card,
+      .impact-section .effect-card {
+        background-color: #1d3a20;
+        border: 0;
+      }
+
+      .impact-section .effect-card {
+        background-color: #536f2b;
+      }
+
+      .impact-section h2,
+      .impact-section h3,
+      .impact-section h4,
+      .impact-section .card h2,
+      .impact-section .text h3,
+      .impact-section .references h4 {
+        color: var(--olive) !important;
+      }
+
+      .impact-section p,
+      .impact-section li,
+      .impact-section .card p,
+      .impact-section .text p,
+      .impact-section .references p,
+      .impact-section .references a,
+      .impact-section .btn {
+        color: #ffffff !important;
+      }
+
+      .impact-section .divider {
+        border-top-color: rgba(194, 192, 138, 0.55);
+      }
+
+      .impact-section .references {
+        background-color: transparent;
+      }
+
+      .final-flashcard-section .card {
+        border-bottom: 0;
+      }
+
+      .card-image-wrapper {
+        height: 140px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      /* SIMPLE PROBLEM SECTION */
+
+      .problem-section {
+        padding: 0 8% 82px;
+        background-color: var(--dark);
+      }
+
+      .final-flashcard-section .problem-section {
+        padding: 48px 0 82px;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .section-tag {
+        color: var(--green);
+        font-size: 11px;
+        letter-spacing: 2px;
+        font-weight: bold;
+      }
+
+      .container h2 {
+        font-family: var(--heading-font);
+        font-size: 32px;
+        color: var(--heading-on-ash);
+        margin: 10px 0 25px 0;
+      }
+
+      .container > h2 {
+        font-size: clamp(34px, 5vw, 52px);
+        line-height: 1;
+        margin-bottom: 32px;
+      }
+
+      /* Bullet Stats */
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+        margin: 0 0 30px;
+      }
+
+      .stats li {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 150px;
+        padding: 22px 20px;
+        background-color: var(--green);
+        color: var(--body-on-green);
+        font-size: 14px;
+        line-height: 1.4;
+        border: 1px solid var(--olive);
+        box-shadow: 0 8px 16px rgba(17, 32, 30, 0.1);
+      }
+
+      .stats li b {
+        color: var(--heading-on-green);
+        font-family: var(--heading-font);
+        font-size: clamp(24px, 3vw, 36px);
+        line-height: 1;
+        margin-bottom: 10px;
+      }
+
+      @media (max-width: 760px) {
+        .merged-stat-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .stats {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* Dividers */
+      .divider {
+        border: 0;
+        border-top: 1px solid rgba(17, 32, 30, 0.15);
+        margin: 35px 0;
+      }
+
+      /* Text */
+      .text h3 {
+        font-family: var(--heading-font);
+        font-size: 22px;
+        color: var(--green);
+        margin: 25px 0 10px 0;
+      }
+
+      .text p {
+        font-size: 15px;
+        line-height: 1.7;
+        color: var(--dark);
+        opacity: 0.85;
+        margin: 0 0 15px 0;
+      }
+
+      .btn {
+        display: inline-block;
+        margin-top: 10px;
+        color: var(--green);
+        font-size: 12px;
+        font-weight: bold;
+        letter-spacing: 1.5px;
+        text-decoration: none;
+      }
+
+      .btn:hover {
+        color: var(--dark);
+      }
+
+      /* References */
+      .references h4 {
+        font-size: 11px;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: var(--ash);
+      }
+
+      .references p {
+        font-size: 13px;
+        color: var(--dark);
+        line-height: 1.8;
+      }
+
+      .references a {
+        color: var(--green);
+        text-decoration: none;
+      }
+
+      .references a:hover {
+        text-decoration: underline;
+      }
+
+      html,
+      body {
+        width: 100%;
+        min-width: 100%;
+        margin: 0;
+        background-color: var(--dark);
+      }
+
+      .site-footer {
+        width: 100vw;
+        max-width: 100vw;
+        margin: 0 calc(50% - 50vw);
+        background-color: var(--dark);
+      }
+
+    </style>
+  </head>
+  <body>
+    <!-- NAVIGATION SECTION -->
+    <header class="navbar">
+      <a href="index.html" class="logo-link">
+        <img src="viridispherelogo forwhite-lightbg.png" alt="Logo" class="nav-logo" />
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="The Issue.html">The Issue</a>
+        <a href="Data and Research.html">Data and Research</a>
+        <a href="Advocacy.html">Our Advocacy</a>
+        <a href="FAQ.html">FAQ</a>
+      </nav>
+      <a href="join.html#join" class="nav-signup">SIGN UP</a>
+    </header>
+
+    <!--"BILLBOARD" OR HERO SECTION-->
+    <section class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1>THE ISSUE</h1>
+        <p>
+          What happens when waste is not managed properly? Improper waste
+          management can affect people, communities, animals, and the
+          environment.
+        </p>
+      </div>
+    </section>
+
+    <!-- NEW PAGE CODE HERE -->
+    <!-- OUR PURPOSE -->
+    <section class="merged-introduction" id="introduction">
+      <div class="advocacy-grid">
+        <div class="advocacy-content">
+          <h3>The Problem at Hand</h3>
+          <p>
+            Improper waste management is a serious environmental problem in the
+            Philippines. Poor waste segregation, littering, and improper
+            disposal cause garbage to accumulate in streets, communities,
+            rivers, and other public areas. These practices contribute to air,
+            land, and water pollution. They also clog drainage systems, which
+            increases the risk of flooding during heavy rain. Improperly
+            managed waste threatens wildlife and affects the health, safety,
+            and quality of life of Filipino communities.
+          </p>
+        </div>
+        <div class="advocacy-image" style="background-image: url('introimage1.jpeg');"></div>
+      </div>
+    </section>
+
+    <section class="merged-introduction scale-section">
+      <div class="advocacy-grid">
+        <div class="advocacy-content">
+          <h3>The Scale of the Problem</h3>
+          <p>
+            The scale of the waste problem shows why proper segregation,
+            recycling, reuse, collection, and disposal matter.
+          </p>
+          <div class="merged-stat-grid">
+            <div class="merged-stat-card">
+              <strong>60.76k</strong>
+              <span>tons of waste generated in the Philippines each day</span>
+            </div>
+            <div class="merged-stat-card">
+              <strong>2.7M</strong>
+              <span>tons of plastic waste produced each year</span>
+            </div>
+            <div class="merged-stat-card">
+              <strong>20%</strong>
+              <span>of plastic waste estimated to enter the ocean</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="advocacy" id="causes-effects">
+      <div class="advocacy-grid">
+        <div class="advocacy-image purpose-image">
+        </div>
+
+        <div class="advocacy-content">
+          <h3>The Causes and Effects of Improper Waste Management</h3>
+
+          <p>
+            Improper waste management is more than just a cleanliness issue.
+            When waste is not properly reduced, segregated, collected, recycled,
+            or disposed of, it can pollute the environment, affect human health,
+            damage ecosystems, and create problems within communities.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="advocacy second-advocacy">
+      <div class="advocacy-grid">
+        <div class="advocacy-image purpose-image">
+        </div>
+
+        <div class="advocacy-content">
+          <h3>Why Does This Matter?</h3>
+          <p>
+            Every day, homes, schools, businesses, and communities produce
+            waste. In the Philippines, approximately 61,000 metric tons of solid
+            waste are generated every day.
+          </p>
+          <p>
+            Proper waste management is not only about throwing garbage away. It
+            also includes reducing waste, separating materials correctly,
+            reusing items, recycling, composting, and proper disposal.
+          </p>
+          <p>
+            Understanding the causes and effects of improper waste management
+            can help people make better decisions about how they handle waste.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CAUSE AND EFFECT #1 -->
+    <section class="website-details impact-section first-impact-section">
+      <div class="container flashcards-heading">
+        <h2>What's the Impact?</h2>
+      </div>
+      <div class="cards-grid">
+        <div class="flip-card" tabindex="0" role="button" aria-pressed="false" aria-label="Show effect for improper waste segregation">
+          <div class="card">
+          <h2>Cause 1: Improper Waste Segregation</h2>
+          <br />
+          <p>
+            One major cause of poor waste management is not separating waste
+            properly. Biodegradable waste, recyclable materials, residual waste,
+            and special waste should not all be mixed together.
+          </p>
+          <br />
+          <p>
+            Republic Act No. 9003 requires waste segregation at the source.
+            Proper segregation makes recycling, composting, reuse, and disposal
+            easier.
+          </p>
+          </div>
+          <div class="card effect-card">
+          <h2>Effect 1: Pollution of Land, Water, and Air</h2>
+          <br />
+          <p>
+            Improperly discarded waste can pollute the environment. Waste dumped
+            on land can affect soil and water, while burning garbage can release
+            harmful substances into the air.
+          </p>
+          <br />
+          <p>
+            Plastic waste can also travel through drainage systems and rivers
+            and eventually reach the ocean.
+          </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CAUSE AND EFFECT #2 -->
+    <section class="website-details impact-section">
+      <div class="cards-grid">
+        <div class="flip-card" tabindex="0" role="button" aria-pressed="false" aria-label="Show effect for lack of awareness">
+          <div class="card">
+          <h2>Cause 2: Lack of Awareness</h2>
+          <br />
+          <p>
+            Waste management also depends on people's daily habits. Littering,
+            mixing different types of waste, and not recycling can increase the
+            amount of garbage in the community.
+          </p>
+          <br />
+          <p>
+            Environmental education can help people understand how to reduce,
+            reuse, recycle, and properly dispose of waste.
+          </p>
+          </div>
+          <div class="card effect-card">
+          <h2>Effect 2: Flooding and Community Problems</h2>
+          <br />
+          <p>
+            Garbage that collects in streets, canals, and drainage systems can
+            block the flow of water.
+          </p>
+          <br />
+          <p>
+            Blocked drains can contribute to flooding and standing water,
+            especially during heavy rain.
+          </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CAUSE AND EFFECT #3 -->
+    <section class="website-details impact-section">
+      <div class="cards-grid">
+        <div class="flip-card" tabindex="0" role="button" aria-pressed="false" aria-label="Show effect for single-use plastics">
+          <div class="card">
+          <h2>Cause 3: Single-Use Plastics</h2>
+          <br />
+          <p>
+            Plastic bags, sachets, wrappers, bottles, and other disposable
+            products are often used only once before they become waste.
+          </p>
+          <br />
+          <p>
+            The World Bank reports that the Philippines generates around 2.7
+            million tons of plastic waste each year.
+          </p>
+          </div>
+          <div class="card effect-card">
+          <h2>Effect 3: Risks to Human Health</h2>
+          <br />
+          <p>
+            Uncollected garbage can attract insects and rodents. Standing water
+            can also become a place where mosquitoes reproduce.
+          </p>
+          <br />
+          <p>
+            Unsafe waste handling and burning may also affect the health of
+            workers and nearby communities.
+          </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CAUSE AND EFFECT #4 -->
+    <section class="website-details impact-section final-flashcard-section">
+      <div class="cards-grid">
+        <div class="flip-card" tabindex="0" role="button" aria-pressed="false" aria-label="Show effect for improper collection and disposal">
+          <div class="card">
+          <h2>Cause 4: Improper Collection and Disposal</h2>
+          <br />
+          <p>
+            Waste problems can become worse when garbage is not collected
+            regularly or when people dump or burn garbage in unsafe places.
+          </p>
+          <br />
+          <p>
+            Proper waste management needs both responsible people and a good
+            system for collecting and disposing of waste.
+          </p>
+          </div>
+          <div class="card effect-card">
+          <h2>Effect 4: Harm to Wildlife and Ecosystems</h2>
+          <br />
+          <p>
+            Waste that enters rivers, beaches, and oceans can harm animals and
+            damage their habitats.
+          </p>
+          <br />
+          <p>
+            Plastic pollution can also affect marine ecosystems, fisheries,
+            tourism, and communities that depend on healthy oceans.
+          </p>
+          </div>
+        </div>
+      </div>
+      <div class="problem-section impact-section">
+      <div class="container">
+
+        <!-- Text Narrative -->
+        <div class="text">
+          <h3>From Street to Sea</h3>
+          <p>
+            A plastic wrapper thrown on the street may seem small, but during
+            heavy rain, it can be carried into a drainage canal. When garbage
+            collects in drainage systems, it causes blockages. Waste also
+            travels through rivers and eventually reaches the ocean—proving how
+            a small act of improper disposal creates a much larger environmental
+            problem.
+          </p>
+
+        <hr class="divider" />
+
+        <!-- Minimal References -->
+        <div class="references">
+          <h4>References</h4>
+          <p>
+            <a href="https://nswmc.emb.gov.ph/" target="_blank"
+              >DENR National Solid Waste Management Commission</a
+            >
+            |
+            <a
+              href="https://lawphil.net/statutes/repacts/ra2001/ra_9003_2001.html"
+              target="_blank"
+              >Republic Act No. 9003</a
+            >
+            |
+            <a
+              href="https://www.worldbank.org/en/country/philippines/publication/market-study-for-philippines-plastics-circularity-opportunities-and-barriers-report-landing-page"
+              target="_blank"
+              >World Bank Plastics Study</a
+            >
+            |
+            <a
+              href="https://www.who.int/tools/compendium-on-health-and-environment/solid-waste"
+              target="_blank"
+              >WHO Solid Waste</a
+            >
+          </p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <section class="site-footer">
+      <div class="footer-content">
+        <div class="footer-layout">
+          <div class="footer-about">
+            <h2>Our Cause</h2>
+            <p>Viridisphere helps students and communities build cleaner, healthier spaces through practical waste management, responsible habits, and environmental action.</p>
+          </div>
+          <div class="footer-links">
+            <h2 class="footer-explore-title"><img src="viridispherelogo fordarkbg.png" alt="" />Explore</h2>
+            <nav class="footer-nav" aria-label="Footer navigation">
+              <a href="Advocacy.html">About Us</a>
+              <a href="FAQ.html">FAQ</a>
+              <a href="https://www.youtube.com/watch?v=tVlKLpxyCBY" target="_blank" rel="noopener noreferrer">Terms and Conditions</a>
+              <a href="https://www.youtube.com/watch?v=tVlKLpxyCBY" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+            </nav>
+            <p class="footer-copyright">&copy; Viridisphere Organization</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      document.querySelectorAll(".flip-card").forEach((card) => {
+        const toggleCard = () => {
+          const isFlipped = card.classList.toggle("is-flipped");
+          card.setAttribute("aria-pressed", String(isFlipped));
+        };
+
+        card.addEventListener("click", toggleCard);
+        card.addEventListener("pointermove", (event) => {
+          card.style.setProperty("--cursor-x", `${event.clientX}px`);
+          card.style.setProperty("--cursor-y", `${event.clientY}px`);
+        });
+        card.addEventListener("keydown", (event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            toggleCard();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

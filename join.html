@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Join Viridisphere!</title>
+    <link rel="stylesheet" href="navherofooter.css" />
+    <link rel="icon" type="image/png" href="viridispherelogo fordarkbg.png" />
+    <style>
+      body {
+        min-height: 100vh;
+        background: var(--white);
+      }
+
+      .signup-page {
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 80px 7%;
+      }
+
+      .signup-page h1 {
+        color: var(--heading-on-ash);
+        font-size: clamp(42px, 7vw, 72px);
+        line-height: 1;
+        margin-bottom: 18px;
+      }
+
+      .signup-page > p {
+        max-width: 620px;
+        margin-bottom: 36px;
+      }
+
+      .mockup-note {
+        display: inline-block;
+        margin-bottom: 16px;
+        color: var(--green);
+        font-family: var(--heading-font);
+        font-size: 12px;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+      }
+
+      .signup-form {
+        display: grid;
+        gap: 18px;
+        padding: 30px;
+        background: var(--green);
+      }
+
+      .signup-form label {
+        color: var(--heading-on-green);
+        font-family: var(--heading-font);
+      }
+
+      .signup-form input {
+        width: 100%;
+        margin-top: 8px;
+        padding: 12px;
+        border: 1px solid var(--ash);
+        background: var(--white);
+        color: var(--body-on-ash);
+        font: inherit;
+      }
+
+      .signup-form button {
+        width: fit-content;
+        padding: 12px 22px;
+        border: 0;
+        background: var(--olive);
+        color: var(--dark);
+        font-family: var(--heading-font);
+        cursor: pointer;
+      }
+
+      .signup-form button:hover {
+        background: var(--white);
+      }
+
+      .back-link {
+        display: inline-block;
+        margin-top: 24px;
+        color: var(--green);
+        font-family: var(--heading-font);
+      }
+    </style>
+  </head>
+  <body>
+    <main class="signup-page" id="join">
+      <span class="mockup-note">Mockup page</span>
+      <h1>Join Viridisphere</h1>
+      <p>
+        This is a signup mockup for the Viridisphere website. The form is for
+        demonstration purposes and does not submit real registrations.
+      </p>
+
+      <form
+        class="signup-form"
+        action="index.html"
+        method="get"
+        onsubmit="window.location.href='index.html'; return false;"
+      >
+        <label>
+          Name
+          <input type="text" name="name" required />
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" required />
+        </label>
+        <button type="submit">SIGN UP</button>
+      </form>
+
+      <a class="back-link" href="index.html">Back to Home</a>
+    </main>
+  </body>
+</html>

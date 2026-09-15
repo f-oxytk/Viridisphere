@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="viridispherelogo fordarkbg.png" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home - Viridisphere</title>
+    <link rel="stylesheet" href="navherofooter.css" />
+    <link rel="stylesheet" href="Home.css" />
+
+    <style>
+      /* HERO BACKGROUND */
+      .hero {
+        position: relative;
+        height: 480px;
+        background-image: url("HomeHERO.jpg");
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        padding: 0 8%;
+      }
+
+      /* NEWSPAPER CONTENT */
+      .website-details {
+        background-color: var(--white);
+        padding: 64px 7%;
+      }
+
+      .cards-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.3fr) minmax(320px, 0.9fr);
+        gap: 38px;
+        max-width: 1200px;
+        margin: 0 auto;
+        align-items: start;
+      }
+
+      .text-column {
+        display: flex;
+        flex-direction: column;
+        gap: 42px;
+      }
+
+      .card {
+        background: transparent;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .card p,
+      .card h2 {
+        color: var(--green);
+      }
+
+      .card p {
+        color: var(--dark);
+        font-size: 16px;
+        line-height: 1.75;
+      }
+
+      .card h2 {
+        font-size: 30px;
+        line-height: 1.1;
+        margin-bottom: 16px;
+      }
+
+      .poster-card {
+        position: sticky;
+        top: 90px;
+        align-self: start;
+        border-left: 1px solid var(--ash);
+        padding-left: 38px;
+      }
+
+      .poster-card img {
+        display: block;
+        width: 100%;
+        min-height: 560px;
+        object-fit: cover;
+        border: 8px solid #ffffff;
+        box-shadow: 0 0 0 1px var(--ash);
+      }
+
+      @media (max-width: 850px) {
+        .cards-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .poster-card {
+          position: static;
+          grid-row: 1;
+          justify-self: center;
+          width: min(480px, 100%);
+          border-left: 0;
+          padding-left: 0;
+        }
+
+        .poster-card img {
+          min-height: 480px;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .text-column {
+          gap: 28px;
+        }
+
+        .poster-card img {
+          min-height: 360px;
+        }
+      }
+
+    </style>
+  </head>
+  <body>
+    <!-- NAVIGATION SECTION -->
+    <header class="navbar">
+      <a href="index.html" class="logo-link">
+        <img src="viridispherelogo forwhite-lightbg.png" alt="Logo" class="nav-logo" />
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="The Issue.html">The Issue</a>
+        <a href="Data and Research.html">Data and Research</a>
+        <a href="Advocacy.html">Our Advocacy</a>
+        <a href="FAQ.html">FAQ</a>
+      </nav>
+      <a href="join.html#join" class="nav-signup">SIGN UP</a>
+    </header>
+
+    <!--"BILLBOARD" OR HERO SECTION-->
+    <section class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1>VIRIDISPHERE
+        </h1>
+        <p>
+          A platform where students and community members learn how proper
+          waste management helps create a cleaner, healthier, and more
+          sustainable community. The website will serve as an accessible source
+          of information about waste segregation, recycling, reuse, and
+          responsible waste disposal.
+        </p>
+      </div>
+    </section>
+
+    <section class="quick-navigation" aria-label="On-page navigation">
+      <h2>Explore</h2>
+      <div class="quick-navigation-links">
+        <a class="quick-navigation-link" href="The Issue.html">
+          <span class="quick-navigation-icon">01</span>
+          <span>The Issue</span>
+        </a>
+        <a class="quick-navigation-link" href="Data and Research.html">
+          <span class="quick-navigation-icon">02</span>
+          <span>Data and Research</span>
+        </a>
+        <a class="quick-navigation-link" href="Advocacy.html">
+          <span class="quick-navigation-icon">03</span>
+          <span>Our Advocacy</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="core-dilemma" aria-labelledby="core-dilemma-title">
+      <div class="core-dilemma-content">
+        <h2 id="core-dilemma-title">The Core Dilemma</h2>
+        <p>
+          Improper waste management represents a critical environmental
+          challenge that severely affects communities, urban streets, and vital
+          waterways throughout the Philippines. Widespread practices such as
+          unorganized waste segregation, deliberate littering, and inadequate
+          disposal infrastructure cause vast quantities of garbage to
+          accumulate in public spaces. This accumulation results in extensive
+          land degradation, air pollution, and water contamination. Furthermore,
+          non-biodegradable waste routinely clogs drainage systems, escalating
+          flood risks during heavy rains and monsoons while posing persistent
+          threats to local biodiversity, marine ecosystems, and public health.
+        </p>
+      </div>
+    </section>
+
+    <section class="home-video" aria-labelledby="home-video-title">
+      <div class="home-video-content">
+        <h2 id="home-video-title">Learn More About the Issue</h2>
+        <div class="video-frame">
+          <iframe
+            src="https://www.youtube.com/embed/8krzjlHaGes"
+            title="Waste management education video"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- CARDS -->
+    <section class="website-details">
+      <div class="cards-grid">
+        <div class="text-column">
+          <div class="card">
+          <h2>Viridisphere's Mission</h2>
+          <br />
+          <p>
+            Viridisphere is a community driven advocacy group dedicated to
+            building a cleaner, healthier, and more sustainable environment. We
+            provide accessible educational resources and practical waste
+            management solutions to empower students and community members to
+            take an active role in keeping their surroundings clean and safe.
+          </p>
+          <br />
+          <p>
+            To achieve this, Viridisphere bridges the gap between
+            environmental awareness and actionable daily habits. We aim to
+            collaborate with environmental organization, local government units,
+            waste management experts, and educational institutions to deliver
+            accurate guidance, practical tools, and engaging multimedia
+            resources. By uniting students, educators, and community members, we
+            foster a shared responsibility for protecting our local government
+            and creating cleaner, safer spaces for everyone. Through community
+            outreach, online campaigns, and practical guides, Viridisphere.
+            works to inspire individuals to take ownership of their waste and
+            actively contribute to a greener ecosystem.
+          </p>
+          </div>
+
+          <div class="card">
+          <h2>Our Purpose</h2>
+          <br />
+          <p>
+            Our website addresses the problem of improper waste disposal by
+            providing a clear, easy to use guide on proper waste management. Its
+            main objective is empower students and community members with
+            practical knowledge about waste segregation, recycling, reuse, and
+            reduction inspiring long term habits that lead to a cleaner and more
+            sustainable environment.
+          </p>
+          <br />
+          <p>
+            Beyond sharing basic information, our purpose is to drive
+            meaningful, long term behavioral change. By offering actionable
+            tips, step by step guides, and clear insights into the impacts of
+            waste, we aim to eliminate confusion around disposal practices and
+            inspire community wide shift toward sustainability. We empower
+            individuals to realize that every small effort from properly sorting
+            a single piece of trash to reducing single use items contributes
+            directly to a healthier ecosystem and cleaner future. Ultimately,
+            this site acts as a bridge between awareness and real world action,
+            turning passive learners into active eco-advocates within their
+            respective communities.
+          </p>
+          </div>
+        </div>
+
+        <div class="card poster-card">
+          <img src="viridisphereposter.png" alt="Viridisphere waste management poster" />
+        </div>
+      </div>
+    </section>
+
+    <section class="home-actions" aria-label="Contact and join Viridisphere">
+      <div class="home-action-panel">
+        <h2>Contact Us</h2>
+        <p><strong>Email address:</strong><br />viridisphere.org@gmail.com</p>
+        <p><strong>Phone Number:</strong><br />0948 452 1737</p>
+      </div>
+      <div class="home-action-panel home-join-panel">
+        <h2>Join Viridisphere</h2>
+        <p>Help build cleaner, healthier communities through practical environmental action.</p>
+        <a class="home-join-link" href="join.html#join">JOIN VIRIDISPHERE</a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <section class="site-footer">
+      <div class="footer-content">
+        <div class="footer-layout">
+          <div class="footer-about">
+            <h2>Our Cause</h2>
+            <p>Viridisphere helps students and communities build cleaner, healthier spaces through practical waste management, responsible habits, and environmental action.</p>
+          </div>
+          <div class="footer-links">
+            <h2 class="footer-explore-title"><img src="viridispherelogo fordarkbg.png" alt="" />Explore</h2>
+            <nav class="footer-nav" aria-label="Footer navigation">
+              <a href="Advocacy.html">About Us</a>
+              <a href="FAQ.html">FAQ</a>
+              <a href="https://www.youtube.com/watch?v=tVlKLpxyCBY" target="_blank" rel="noopener noreferrer">Terms and Conditions</a>
+              <a href="https://www.youtube.com/watch?v=tVlKLpxyCBY" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+            </nav>
+            <p class="footer-copyright">&copy; Viridisphere Organization</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Advocacy and About Us - Viridisphere</title>
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&family=Playfair+Display:wght@400;500;600;700&family=Valley+Sans&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- EXTERNAL CSS -->
+    <link rel="stylesheet" href="navherofooter.css">
+
+    <style>
+/* HERO BACKGROUND */
+      .hero {
+        position: relative;
+        height: 480px;
+        background-image: url("advocacyHERO.jpg");
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        padding: 0 8%;
+      }
+
+      
+/* COLORS */
+        :root {
+            --dark: #11201e;
+            --green: #375a17;
+            --olive: #c2c08a;
+            --ash: #a6a495;
+            --white: #dfdbd6;
+            }
+
+
+/* GENEREAL FORMATTING */
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        }
+
+        html {
+        scroll-behavior: smooth;
+        }
+
+        body {
+        font-family: var(--body-font);
+        background-color: var(--white);
+        color: var(--dark);
+        line-height: 1.6;
+        }
+
+
+/* HEADINGS */
+        .section-heading {
+        margin-bottom: 60px;
+        width: 100%;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        }
+
+        .section-heading > span {
+        font-family: var(--body-font);
+        color: var(--green);
+        font-size: 10px;
+        font-weight: bold;
+        letter-spacing: 2px;
+        }
+
+        .section-heading h2 {
+        font-family: var(--heading-font);
+        font-size: clamp(32px, 4vw, 48px);
+        line-height: 1.15;
+        font-weight: 700;
+        color: var(--dark);
+        margin-top: 12px;
+        text-align: center;
+        }
+
+
+/* ADVOCACY */
+        .advocacy {
+        padding: 100px 9%;
+        background-color: var(--white);
+        }
+
+        /* Purpose-Grid */
+
+        .advocacy-grid {
+        width: 100%;
+        max-width: 1200px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 70px;
+        align-items: center;
+        }
+
+        /* Image */
+
+        .advocacy-image {
+        min-height: 450px;
+        background-image: url('https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=900&q=80');
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        border: 8px solid #ffffff;
+        box-shadow: 0 0 0 1px var(--ash);
+        }
+
+        .image-label {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        padding: 8px 14px;
+        background-color: var(--dark);
+        color: var(--olive);
+        font-family: var(--body-font);
+        font-size: 9px;
+        letter-spacing: 1px;
+        }
+
+        /* Advocacy-Content */
+
+        .advocacy-content h3 {
+        font-family: var(--heading-font);
+        font-size: 34px;
+        color: var(--heading-on-ash);
+        margin-bottom: 20px;
+        }
+
+        .advocacy-content p {
+        font-family: var(--body-font);
+        font-size: 14px;
+        color: var(--body-on-ash);
+        margin-bottom: 18px;
+        line-height: 1.7;
+        }
+
+        .sdg-intro {
+        width: 100%;
+        max-width: 1200px;
+        margin: 40px auto 0;
+        padding: 28px 28px 18px;
+        background: #f4f1ec;
+        border: 1px solid rgba(55, 90, 23, 0.2);
+        }
+
+        .sdg-intro p {
+        margin: 0;
+        font-size: 14px;
+        line-height: 1.8;
+        color: var(--dark);
+        }
+
+        .sdg-intro p + p {
+        margin-top: 18px;
+        }
+
+        .sdg-list {
+        margin: 0;
+        padding-left: 20px;
+        font-size: 14px;
+        line-height: 1.8;
+        color: var(--dark);
+        }
+
+        .sdg-list li {
+        margin-bottom: 10px;
+        }
+
+        .sdg-grid {
+        width: 100%;
+        max-width: 1200px;
+        margin: 24px auto 0;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+        }
+
+        .sdg-tile {
+        aspect-ratio: 1;
+        background: var(--dark);
+        border: 1px solid rgba(194, 192, 138, 0.5);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 18px;
+        color: var(--white);
+        overflow: hidden;
+        transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+        transform-origin: center;
+        }
+
+        .sdg-tile:nth-child(even) {
+        background: var(--green);
+        }
+
+        .sdg-tile:hover,
+        .sdg-tile:focus-within {
+        transform: scale(1.04);
+        box-shadow: 0 0 16px rgba(194, 192, 138, 0.75);
+        filter: brightness(1.08);
+        }
+
+        .sdg-tile img {
+        width: 90%;
+        max-width: 300px;
+        height: auto;
+        object-fit: contain;
+        filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
+        transition: transform 180ms ease, filter 180ms ease;
+        }
+
+        .sdg-tile:hover img,
+        .sdg-tile:focus-within img {
+        transform: scale(1.04);
+        filter: drop-shadow(0 0 12px rgba(194, 192, 138, 0.8));
+        }
+
+        .sdg-tile strong,
+        .sdg-tile span {
+        display: none;
+        }
+
+
+/* ACTIONS */
+        .action {
+        background-color: var(--dark);
+        color: var(--white);
+        padding: 100px 9% 80px;
+        }
+
+        /* Light-Heading */
+
+        .light-heading > span {
+        color: var(--olive);
+        }
+
+        .light-heading h2 {
+        color: var(--heading-on-green);
+        }
+
+        .advocacy-cta {
+        width: calc(100% + 18%);
+        max-width: none;
+        margin: 80px -9% 0;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        }
+
+        .advocacy-cta p {
+        color: var(--body-on-green);
+        font-size: 17px;
+        line-height: 1.7;
+        margin-bottom: 35px;
+        text-align: center;
+        }
+
+        .advocacy-cta a {
+        display: inline-block;
+        padding: 18px 30px;
+        background: var(--green);
+        color: var(--white);
+        font-size: 12px;
+        font-weight: bold;
+        letter-spacing: 2px;
+        text-decoration: none;
+        }
+
+        .advocacy-cta a:hover {
+        background: var(--olive);
+        color: var(--dark);
+        }
+
+        /* Action-Intro */
+
+        .action-intro {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto 100px;
+        }
+
+        .light-label {
+        color: var(--olive);
+        }
+
+        .action-intro h2 {
+        font-family: var(--heading-font);
+        font-size: 37px;
+        line-height: 1.25;
+        font-weight: 700;
+        color: var(--heading-on-green);
+        margin: 12px 0 20px;
+        }
+
+        .action-intro p {
+        font-family: var(--body-font);
+        font-size: 14px;
+        line-height: 1.7;
+        color: var(--body-on-green);
+        margin-bottom: 15px;
+        }
+
+
+/* LIST OF ACTIONS */
+        .things-section {
+        width: 100%;
+        max-width: 1200px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 0.8fr 1.2fr;
+        gap: 90px;
+        }
+
+        .things-title {
+        position: sticky;
+        top: 90px;
+        align-self: start;
+        }
+
+        @media (max-width: 760px) {
+        .things-title {
+        position: static;
+        }
+        }
+
+        .things-title h2 {
+        font-family: var(--heading-font);
+        font-size: 40px;
+        line-height: 1.2;
+        color: var(--heading-on-green);
+        margin: 12px 0 20px;
+        }
+
+        .things-title p {
+        font-family: var(--body-font);
+        font-size: 13px;
+        color: var(--body-on-green);
+        }
+
+        /* ACTION ITEMS */
+
+        .action-item {
+        display: grid;
+        grid-template-columns: 45px 1fr;
+        gap: 20px;
+        padding: 25px 0;
+        border-bottom: 1px solid var(--ash);
+        }
+
+        .action-item:first-child {
+        padding-top: 0;
+        }
+
+        .action-number {
+        font-family: var(--title-font);
+        font-size: 20px;
+        color: var(--olive);
+        }
+
+        .action-item h3 {
+        font-family: var(--heading-font);
+        font-size: 21px;
+        color: var(--olive);
+        margin: 0 0 7px;
+        }
+
+        .action-item p {
+        font-family: var(--body-font);
+        font-size: 12px;
+        line-height: 1.65;
+        color: var(--body-on-green);
+        }
+
+        .navbar .nav-links a {
+        font-family: var(--heading-font);
+        font-weight: 700 !important;
+        }
+
+        .donation-section {
+        padding: 80px 9%;
+        background-color: var(--white);
+        }
+
+        .donation-layout {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: minmax(0, 1.25fr) minmax(260px, 0.75fr);
+        gap: 28px;
+        align-items: stretch;
+        }
+
+        .donation-panel {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding: 42px;
+        background-color: var(--dark);
+        border: 1px solid var(--green);
+        color: var(--body-on-green);
+        }
+
+        .contact-panel {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 42px;
+        background-color: var(--green);
+        border: 1px solid var(--olive);
+        }
+
+        .contact-panel h2 {
+        margin-bottom: 18px;
+        color: var(--heading-on-green);
+        font-family: var(--heading-font);
+        font-size: clamp(28px, 4vw, 42px);
+        line-height: 1.1;
+        }
+
+        .contact-panel p {
+        margin: 0 0 14px;
+        color: var(--body-on-green);
+        font-size: 15px;
+        line-height: 1.7;
+        }
+
+        .contact-panel strong {
+        color: var(--olive);
+        }
+
+        .updates-form {
+        display: grid;
+        gap: 10px;
+        margin-top: 18px;
+        padding-top: 22px;
+        border-top: 1px solid rgba(194, 192, 138, 0.55);
+        }
+
+        .updates-form label {
+        color: var(--olive);
+        font-size: 12px;
+        font-weight: bold;
+        letter-spacing: 0.8px;
+        text-transform: uppercase;
+        }
+
+        .updates-form input {
+        width: 100%;
+        padding: 12px 13px;
+        border: 1px solid var(--ash);
+        background-color: var(--white);
+        color: var(--dark);
+        font: inherit;
+        }
+
+        .updates-form input:focus {
+        outline: 2px solid var(--olive);
+        outline-offset: 2px;
+        }
+
+        .updates-form button {
+        justify-self: start;
+        padding: 11px 18px;
+        border: 1px solid var(--olive);
+        background-color: transparent;
+        color: var(--body-on-green);
+        font: inherit;
+        font-weight: bold;
+        cursor: pointer;
+        }
+
+        .updates-form button:hover,
+        .updates-form button:focus-visible {
+        background-color: var(--olive);
+        color: var(--dark);
+        }
+
+        .updates-message {
+        min-height: 1.5em;
+        margin: 0;
+        color: var(--olive);
+        font-size: 13px;
+        }
+
+        .donation-panel h2 {
+        margin-bottom: 12px;
+        color: var(--heading-on-green);
+        font-family: var(--heading-font);
+        font-size: clamp(28px, 4vw, 42px);
+        line-height: 1.1;
+        }
+
+        .donation-panel > p {
+        max-width: 580px;
+        margin-bottom: 28px;
+        color: var(--body-on-green);
+        }
+
+        .donation-form {
+        display: grid;
+        gap: 18px;
+        }
+
+        .donation-form label {
+        display: grid;
+        gap: 7px;
+        color: var(--olive);
+        font-size: 12px;
+        font-weight: bold;
+        letter-spacing: 0.8px;
+        text-transform: uppercase;
+        }
+
+        .donation-form input {
+        width: 100%;
+        padding: 13px 14px;
+        border: 1px solid var(--ash);
+        background-color: var(--white);
+        color: var(--dark);
+        font: inherit;
+        }
+
+        .donation-form input:focus {
+        outline: 2px solid var(--olive);
+        outline-offset: 2px;
+        }
+
+        .preset-label {
+        margin-bottom: -8px;
+        }
+
+        .donation-presets {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        }
+
+        .donation-preset {
+        padding: 11px 18px;
+        border: 1px solid var(--olive);
+        background: transparent;
+        color: var(--body-on-green);
+        font: inherit;
+        font-weight: bold;
+        cursor: pointer;
+        }
+
+        .donation-preset:hover,
+        .donation-preset.is-selected,
+        .donation-preset:focus-visible {
+        background-color: var(--olive);
+        color: var(--dark);
+        }
+
+        .donation-submit {
+        justify-self: start;
+        padding: 13px 22px;
+        border: 1px solid var(--green);
+        background-color: var(--green);
+        color: var(--white);
+        font: inherit;
+        font-weight: bold;
+        letter-spacing: 0.8px;
+        cursor: pointer;
+        }
+
+        .donation-submit:hover,
+        .donation-submit:focus-visible {
+        background-color: var(--olive);
+        color: var(--dark);
+        }
+
+        .donation-message {
+        min-height: 1.5em;
+        margin: 0;
+        color: var(--olive);
+        }
+
+        @media (max-width: 560px) {
+        .donation-section {
+        padding: 56px 6%;
+        }
+
+        .donation-panel {
+        padding: 28px 22px;
+        }
+
+        .donation-layout {
+        grid-template-columns: 1fr;
+        }
+
+        .contact-panel {
+        padding: 28px 22px;
+        }
+        }
+    </style>
+</head>
+    <link rel="icon" type="image/png" href="viridispherelogo fordarkbg.png" />
+
+
+<body>
+    <!-- NAVIGATION SECTION -->
+    <header class="navbar">
+    <a href="index.html" class="logo-link">
+    <img src="viridispherelogo forwhite-lightbg.png" alt="Logo" class="nav-logo" />
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="The Issue.html">The Issue</a>
+        <a href="Data and Research.html">Data and Research</a>
+        <a href="Advocacy.html">Our Advocacy</a>
+        <a href="FAQ.html">FAQ</a>
+      </nav>
+            <a href="join.html#join" class="nav-signup">SIGN UP</a>
+    </header>
+    
+
+<!--"BILLBOARD" OR HERO SECTION-->
+    <section class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1>OUR ADVOCACY</h1>
+        <p>
+          Educate, Advocate, Build.
+        </p>
+      </div>
+    </section>
+
+
+<!--ADVOCACY BODY-->
+    <section class="advocacy" id="advocacy">
+
+        <div class="section-heading">
+
+            <h2>
+                Understanding the problem<br>
+                is only the beginning.
+            </h2>
+
+        </div>
+
+
+<!-- OUR PURPOSE -->
+
+        <div class="advocacy-grid">
+
+            <div class="advocacy-image purpose-image">
+            </div>
+
+
+            <div class="advocacy-content">
+
+                <h3>Our Purpose</h3>
+
+                <p>
+                    Viridisphere exists to close the gap between what people know about waste and what people actually do about it. Studies keep showing that most households understand recycling matters, yet improper segregation, illegal dumping, and open burning remain everyday realities in our communities.
+                </p>
+
+                <p>
+                    We were formed to turn that awareness into action through community clean-up drives, waste segregation education, and partnerships with local barangays and schools that put simple, doable habits in front of people where they live.
+                </p>
+
+                <p>
+                    Our purpose is threefold: to educate people on proper waste management practices, to advocate for stronger local enforcement of waste ordinances, and to build a network of volunteers who can carry these efforts forward long after any single campaign ends.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="sdg-intro">
+            <p>Viridisphere contributes to the following SDGs:</p>
+            <ul class="sdg-list">
+                <li>
+                    <strong>SDG 11: Sustainable Cities and Communities</strong> — Viridisphere helps create cleaner, safer, and more resilient communities through better waste management and community action.
+                </li>
+                <li>
+                    <strong>SDG 12: Responsible Consumption and Production</strong> — We promote waste segregation, recycling, reuse, and responsible disposal to reduce unnecessary waste and improve resource use.
+                </li>
+                <li>
+                    <strong>SDG 13: Climate Action</strong> — By discouraging harmful practices such as open burning, we support environmentally responsible habits that help reduce climate impacts.
+                </li>
+                <li>
+                    <strong>SDG 14: Life Below Water</strong> — Our efforts help prevent plastic and other waste from reaching waterways and oceans, protecting marine ecosystems.
+                </li>
+                <li>
+                    <strong>SDG 15: Life on Land</strong> — We reduce land pollution and help protect local ecosystems by encouraging better disposal and cleaner communities.
+                </li>
+                <li>
+                    <strong>SDG 17: Partnerships for the Goals</strong> — Viridisphere works with schools, barangays, community members, and volunteers to strengthen collective action and long-term impact.
+                </li>
+            </ul>
+
+            <p>
+                By connecting education with community action, Viridisphere aims not only to inform people about proper waste management, but to help make responsible waste practices a lasting part of everyday community life.
+            </p>
+        </div>
+
+        <div class="sdg-grid" aria-label="SDG goals accomplished by Viridisphere">
+            <div class="sdg-tile">
+                <img src="sdg-icons/E_WEB_11.png" alt="SDG 11" />
+            </div>
+            <div class="sdg-tile">
+                <img src="sdg-icons/E_WEB_12.png" alt="SDG 12" />
+            </div>
+            <div class="sdg-tile">
+                <img src="sdg-icons/E_WEB_13.png" alt="SDG 13" />
+            </div>
+            <div class="sdg-tile">
+                <img src="sdg-icons/E_WEB_14.png" alt="SDG 14" />
+            </div>
+            <div class="sdg-tile">
+                <img src="sdg-icons/E_WEB_15.png" alt="SDG 15" />
+            </div>
+            <div class="sdg-tile">
+                <img src="sdg-icons/E_WEB_17.png" alt="SDG 17" />
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         ACTION
+    ================================================== -->
+
+    <section class="action" id="action">
+
+        <div class="section-heading light-heading">
+
+            <h2>
+                Don't just know.<br>
+                Do something.
+            </h2>
+
+        </div>
+
+        <!-- ORGANIZATION PURPOSE -->
+
+        <div class="action-intro">
+
+            <h2>
+                Turning environmental knowledge
+                into everyday habits.
+            </h2>
+
+            <p>
+                At Viridisphere, our main goal is to stop just
+                talking about the waste problem and actually do
+                something about it! We want to help people turn basic
+                environmental knowledge into everyday habits.
+            </p>
+
+            <p>
+                By giving students and community members easy guides
+                and real opportunities to help out, we can keep
+                garbage off our streets and out of our rivers.
+                Real change starts at home, and we're here to help
+                everyone make that switch step by step.
+            </p>
+
+        </div>
+
+
+       
+
+
+        <!-- SIMPLE THINGS -->
+
+        <div class="things-section">
+            <div class="things-title">
+                <span class="sub-label light-label">
+                  
+                </span>
+                <h2>
+                    Simple Things<br>
+                    You Can Do Today
+                </h2>
+                <p>
+                    You don't have to do anything huge to make a
+                    difference.
+                </p>
+            </div>
+
+
+            <div class="action-list">
+
+                <!-- ACTION 01 -->
+
+                <div class="action-item">
+                    <span class="action-number">
+                        01
+                    </span>
+                    <div>
+                        <h3>
+                            Sort Your Trash Proper Way
+                        </h3>
+                        <p>
+                            Separate your biodegradable food scraps,
+                            recyclables, and regular trash into
+                            different bins at home so it's way easier
+                            to recycle and dispose of safely.
+                        </p>
+                    </div>
+                </div>
+
+
+                <!-- ACTION 02 -->
+
+                <div class="action-item">
+                    <span class="action-number">
+                        02
+                    </span>
+                    <div>
+                        <h3>
+                            Cut Down on Single-Use Plastics
+                        </h3>
+                        <p>
+                            Try bringing your own tumbler, eco-bag,
+                            or reusable containers instead of using
+                            plastic bags, water bottles, and sachets
+                            every day.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- ACTION 03 -->
+
+                <div class="action-item">
+                    <span class="action-number">
+                        03
+                    </span>
+                    <div>
+                        <h3>
+                            Try Composting
+                        </h3>
+                        <p>
+                            Instead of throwing away fruit peels and
+                            food leftovers, turn them into compost
+                            for your plants or garden.
+                        </p>
+                    </div>
+                </div>
+
+
+                <!-- ACTION 04 -->
+
+                <div class="action-item">
+                    <span class="action-number">
+                        04
+                    </span>
+                    <div>
+                        <h3>
+                            Join Local Clean-Up Activities
+                        </h3>
+                        <p>
+                            Help out in neighborhood or school
+                            clean-up drives to stop plastic from
+                            clogging up our street drains and
+                            washing into the ocean.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- ACTION 05 -->
+
+                <div class="action-item">
+                    <span class="action-number">
+                        05
+                    </span>
+                    <div>
+                        <h3>
+                            Spread the Word
+                        </h3>
+                        <p>
+                            Talk to your classmates, friends, and
+                            family about proper waste segregation
+                            and show them how easy it actually is.
+                        </p>
+                    </div>
+                </div>
+
+                        </div>
+                </div>
+
+        <div class="advocacy-cta">
+            <p>
+                The best way to learn about proper waste management is to
+                start practicing it.
+            </p>
+            <a href="join.html#join">JOIN VIRIDISPHERE</a>
+        </div>
+
+    </section>
+
+    <section class="donation-section" aria-labelledby="donation-title">
+                <div class="donation-layout">
+                    <div class="donation-panel">
+            <h2 id="donation-title">Support Our Advocacy</h2>
+            <p>Your contribution helps us share practical waste management education and support community action.</p>
+
+            <form class="donation-form" id="donation-form">
+                <label for="donor-email">
+                    Email address
+                    <input id="donor-email" name="email" type="email" placeholder="you@example.com" required />
+                </label>
+
+                <span class="preset-label" id="preset-label">Choose an amount</span>
+                <div class="donation-presets" aria-labelledby="preset-label">
+                    <button class="donation-preset" type="button" data-amount="100">PHP 100</button>
+                    <button class="donation-preset" type="button" data-amount="500">PHP 500</button>
+                    <button class="donation-preset" type="button" data-amount="1000">PHP 1,000</button>
+                </div>
+
+                <label for="donation-amount">
+                    Donation amount (PHP)
+                    <input id="donation-amount" name="amount" type="number" min="1" step="1" placeholder="Enter an amount" required />
+                </label>
+
+                <button class="donation-submit" type="submit">Continue Donation</button>
+                <p class="donation-message" id="donation-message" role="status" aria-live="polite"></p>
+            </form>
+                    </div>
+                    <aside class="contact-panel" aria-labelledby="contact-title">
+                        <h2 id="contact-title">Contact Us</h2>
+                        <p><strong>Email address:</strong><br />viridisphere.org@gmail.com</p>
+                        <p><strong>Phone Number:</strong><br />0948 452 1737</p>
+                        <form class="updates-form" id="updates-form">
+                            <label for="updates-email">Subscribe for updates!</label>
+                            <input id="updates-email" name="updates-email" type="email" placeholder="you@example.com" required />
+                            <button type="submit">Confirm</button>
+                            <p class="updates-message" id="updates-message" role="status" aria-live="polite"></p>
+                        </form>
+                    </aside>
+                </div>
+    </section>
+
+
+ <!-- FOOTER -->
+    <section class="site-footer">
+      <div class="footer-content">
+                <div class="footer-layout">
+                    <div class="footer-about">
+                        <h2>Our Cause</h2>
+                        <p>Viridisphere helps students and communities build cleaner, healthier spaces through practical waste management, responsible habits, and environmental action.</p>
+                    </div>
+                    <div class="footer-links">
+                        <h2 class="footer-explore-title"><img src="viridispherelogo fordarkbg.png" alt="" />Explore</h2>
+                        <nav class="footer-nav" aria-label="Footer navigation">
+                            <a href="Advocacy.html">About Us</a>
+                            <a href="FAQ.html">FAQ</a>
+                            <a href="https://www.youtube.com/watch?v=tVlKLpxyCBY" target="_blank" rel="noopener noreferrer">Terms and Conditions</a>
+                            <a href="https://www.youtube.com/watch?v=tVlKLpxyCBY" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+                        </nav>
+                        <p class="footer-copyright">&copy; Viridisphere Organization</p>
+                    </div>
+                </div>
+      </div>
+    </section>
+
+        <script>
+            const donationForm = document.querySelector("#donation-form");
+            const donationAmount = document.querySelector("#donation-amount");
+            const donationMessage = document.querySelector("#donation-message");
+            const donationPresets = document.querySelectorAll(".donation-preset");
+            const updatesForm = document.querySelector("#updates-form");
+            const updatesMessage = document.querySelector("#updates-message");
+
+            donationPresets.forEach((preset) => {
+                preset.addEventListener("click", () => {
+                    donationAmount.value = preset.dataset.amount;
+                    donationPresets.forEach((button) => button.classList.remove("is-selected"));
+                    preset.classList.add("is-selected");
+                    donationAmount.focus();
+                });
+            });
+
+            donationAmount.addEventListener("input", () => {
+                donationPresets.forEach((preset) => {
+                    preset.classList.toggle("is-selected", preset.dataset.amount === donationAmount.value);
+                });
+            });
+
+            donationForm.addEventListener("submit", (event) => {
+                event.preventDefault();
+                const formattedAmount = Number(donationAmount.value).toLocaleString("en-PH");
+                donationMessage.textContent = `Thank you. Your donation of PHP ${formattedAmount} is ready to continue.`;
+            });
+
+            updatesForm.addEventListener("submit", (event) => {
+                event.preventDefault();
+                updatesMessage.textContent = "You are subscribed for updates.";
+            });
+        </script>
+
+</body>
+</html>
